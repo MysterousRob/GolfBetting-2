@@ -1,0 +1,138 @@
+.slider{
+    display: flex;
+    flex-direction: column;
+    margin-left: 15%;
+}
+
+.dropdown {
+    position: relative;
+    color: black;
+    margin-bottom: 20px; 
+  }
+  .btn{
+    display: flex;
+    justify-content: center;
+  }
+  .dropdown .btn {
+    position: relative;
+  }
+  
+  .dropdown-content {
+    position: relative;
+    top: 100%; 
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    display: none;
+    padding: 0;
+    margin: 0;
+    border-radius: 0px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-top: none;
+  }
+  
+  .dropdown-content.show {
+    display: block;
+  }
+
+.slider-list {
+    position: relative;
+    list-style: none; 
+    padding: 0; 
+    margin: 0;
+    display: block;
+}
+
+.slider-list p {
+    margin: 0; 
+    padding: 13px; 
+    border-bottom: 1px solid #ccc; 
+    border-radius: 0px; 
+}
+
+.slider-list p:last-child {
+    border-bottom: none; 
+}
+.color {
+    color: black;
+}
+
+.slider2 {
+    width: 100px; 
+}
+
+/*predictor info*/
+.section {
+    background-color: white;
+}
+.section h1{
+    color: black;
+    background-color: white;
+    text-align: center;
+    font-size: 50px;
+}
+.header {
+    background-color: white;
+}
+
+/*leaderboard css*/
+.NEO {
+    width: 100%; ;
+    padding: 10px; 
+  }
+.NEO h2 {
+  font-size: 28px;
+  text-align: center;
+}
+.leaderboard{
+    margin-left: 10px;
+    border: #fff solid 3px;
+    border-radius: 10px;
+}
+
+.container2 {
+    width: 100%; 
+    border-collapse: collapse; 
+  }
+
+  .text-th {
+    background-color: #f2f2f2; 
+    text-align: left;
+    padding: 8px; 
+    position: relative;
+  }
+  
+  .icon {
+    position: absolute;
+    right: 5px; 
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .container-box {
+    text-align: center; 
+  }
+.text-th,
+.text-tb {
+  padding: 8px; 
+  background-color: white;
+  text-align: center;
+}
+
+/*Live golf Odds css*/
+.Live-Odds{
+    display: flex;
+    margin: 10px;
+    padding: 15px;
+}
+.Live-Odds-Slider{
+    flex: 1;
+}
+.Live-Odds-Slider h1{
+  font-size: 28px;
+  text-align: center;
+}
+.Live-Odds-Leaderboard{
+    flex: 1;
+}
