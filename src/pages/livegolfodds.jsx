@@ -1,7 +1,7 @@
 import React from "react";
-import Header from "./../components/Header";
+import Header from "../components/Header/Header";
 import MultiVariableSlider from "../components/Slider/sliders";
-import Footer from "../components/footer";
+import Footer from "../components/Footer/Footer";
 import LeaderboardOutline from "../components/Leaderboard/LeaderboardTable";
 
 //function NewPage

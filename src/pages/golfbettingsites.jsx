@@ -1,6 +1,6 @@
 import React from "react";
-import Footer from "../components/footer";
-import Header from "./../components/Header";
+import Footer from "../components/Footer/Footer";
+import Header from "./../components/Header/Header";
 import { useState } from "react";
 import StarRating from "./../components/stars";
 import williamHill from "./../assets/photos/williamHill.png";

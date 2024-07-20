@@ -1,7 +1,7 @@
 import React from "react";
-import Header from "./../components/Header";
+import Header from "../components/Header/Header"
 import Competiton from "./tournaments/tournaments";
-import Footer from "../components/footer";
+import Footer from "../components/Footer/Footer";
 //function NewPage
 
 //need to fix background and impliment my form to home page

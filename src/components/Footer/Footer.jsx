@@ -1,6 +1,5 @@
 import React from "react";
-import "./../assets/css/footer.css";
-import { Foot2 } from "../state/footerData";
+import { Foot2 } from "../../state/footerData";
 
 function Footer() {
   return (
