@@ -1,6 +1,5 @@
 import React from "react";
 import { Link, NavLink } from 'react-router-dom';
-import './../assets/css/footer.css';
 import { navOptions } from "./nav";
 
 
@@ -123,20 +122,20 @@ export const foot = [
 
 export const Foot2 = () => {
     return (
-    <>
-        {foot.map((footItems, i) =>(
-            <div key={i} className="nav-footer">
-                <h2>{footItems.title}</h2>
-                    {footItems.links.map((nav, i) => (
-                        <NavLink key={i} to={nav.href}>
-                            <p className="">
-                                {nav.title}
-                            </p>
-                        </NavLink>
-             ))}
-            </div>
+        <>
+        {foot.map((footItems, i) => (
+          <div key={i} className="flex flex-col">
+            <h2 className="mb-4 border-b border-white">{footItems.title}</h2>
+            {footItems.links.map((nav, j) => (
+              <NavLink key={j} to={nav.href}>
+                <p className="">
+                  {nav.title}
+                </p>
+              </NavLink>
+            ))}
+          </div>
         ))}
-    </>
+      </>
       );
 }
 //make this into routes for the footerside of the webpage

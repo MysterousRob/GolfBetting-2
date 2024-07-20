@@ -1,5 +1,4 @@
 import React from "react";
-import "../../assets/css/GBS.css"
 
 
 export const sliderData = [
@@ -103,7 +102,7 @@ export const sliderData = [
                 name: "SG Tee to Green",
             },
             {
-                name: "SG arround the Green",
+                name: "SG around the Green",
             },
             {
                 name: "SG Putting",
@@ -124,7 +123,7 @@ export const sliderData = [
                 name: "Going for Green",
             },
             {
-                name: "Driving Acuracy",
+                name: "Driving Accuracy",
             },
             {
                 name: "GIR",

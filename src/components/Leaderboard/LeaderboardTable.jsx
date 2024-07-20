@@ -1,6 +1,5 @@
 import React from "react";
-import '../../assets/css/GBS.css';
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 import { fetchDataArray } from "./api data/Leaderboard";
 //image icon imports
 import { MdLeaderboard } from "react-icons/md";
@@ -8,60 +7,65 @@ import { GrScorecard } from "react-icons/gr";
 import { TbSquareRoundedPercentage } from "react-icons/tb";
 import { MdDriveFileRenameOutline } from "react-icons/md";
 
-const endpoint = 'https://api.sportsdata.io/golf/v2/json/Leaderboard/60?key=3e7a7f2362474cd4ba30ec12b60f51c9'
+const endpoint =
+  "https://api.sportsdata.io/golf/v2/json/Leaderboard/60?key=3e7a7f2362474cd4ba30ec12b60f51c9";
 
-function LeaderboardOutline(){
+function LeaderboardOutline() {
   const [leaderboardData, setLeaderboardData] = useState(null);
 
   useEffect(() => {
-    fetchDataArray(setLeaderboardData, endpoint)
-  }, [])
+    fetchDataArray(setLeaderboardData, endpoint);
+  }, []);
 
   useEffect(() => {
-      console.log('raw leaderboardData in LeaderboardTable.js', leaderboardData);
-  }, [leaderboardData]); 
+    console.log("raw leaderboardData in LeaderboardTable.js", leaderboardData);
+  }, [leaderboardData]);
 
-//   useEffect(() => {
-//       console.log('players in leaderboardData in LeaderboardTable.js', leaderboardData.Players);
-//   }, [leaderboardData]); 
+  //   useEffect(() => {
+  //       console.log('players in leaderboardData in LeaderboardTable.js', leaderboardData.Players);
+  //   }, [leaderboardData]);
 
   return (
-      <div className="NEO">
-          <h2>Leaderboard:</h2>
-          <div className="leaderboard">
-              <table className="container2">
-                  <thead className="container3">
-                      <tr className="container-box">
-                          <th className="text-th">
-                              Rank
-                          </th> 
-                          <MdLeaderboard />
-                          <th className="text-th">
-                              Player Name
-                              <MdLeaderboard />
-                          </th>
-                          <th className="text-th">
-                              Score
-                              
-                          </th>
-                          <th className="text-th">
-                              Odds
-                          </th>
-                      </tr>
-                  </thead> 
-                  <tbody className="container4">
-                      {leaderboardData?.Players?.length > 0 ? (leaderboardData?.Players?.map((player, index) => (
-                         <tr key={index} className="container-box"> 
-                              <td className="text-tb">{index + 1}</td> 
-                              <td className="text-tb">{player.Name}</td> 
-                              {/* <td className="text-tb">{player.Rounds[4].Score}</td> 
-                              <td className="text-tb">{player.Odds}</td>  */}
-                          </tr>
-                     ))) : <div>oops</div>}  
-                  </tbody>
-              </table>
-          </div>
-          </div>
+    <div className="w-full p-2.5">
+      <h2 className="text-2xl text-center">Leaderboard:</h2>
+      <div className="ml-2.5 border border-white border-3 rounded-lg">
+        <table className="w-full border-collapse">
+          <thead>
+            <tr className="text-center">
+              <th className="bg-gray-200 text-left p-2.5 relative">
+                Rank
+                <MdLeaderboard className="absolute right-1 top-1/2 transform -translate-y-1/2" />
+              </th>
+              <th className="bg-gray-200 text-left p-2.5 relative">
+                Player Name
+                <MdLeaderboard className="absolute right-1 top-1/2 transform -translate-y-1/2" />
+              </th>
+              <th className="bg-gray-200 text-left p-2.5">Score</th>
+              <th className="bg-gray-200 text-left p-2.5">Odds</th>
+            </tr>
+          </thead>
+          <tbody>
+            {leaderboardData?.Players?.length > 0 ? (
+              leaderboardData.Players.map((player, index) => (
+                <tr key={index} className="text-center">
+                  <td className="p-2.5 bg-white text-center">{index + 1}</td>
+                  <td className="p-2.5 bg-white text-center">{player.Name}</td>
+                  {/* Uncomment these lines when data is available
+                <td className="p-2.5 bg-white text-center">{player.Rounds[4].Score}</td>
+                <td className="p-2.5 bg-white text-center">{player.Odds}</td> */}
+                </tr>
+              ))
+            ) : (
+              <tr>
+                <td colSpan="4" className="text-center p-2.5">
+                  Oops, no data available
+                </td>
+              </tr>
+            )}
+          </tbody>
+        </table>
+      </div>
+    </div>
   );
 }
 

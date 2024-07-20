@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"name": "Sanity",
+			"path": "../../../Golf-betting/golfbetting/Sanity"
+		},
+		{
+			"name": "GolfBetting2",
+			"path": "../.."
+		}
+	],
+	"settings": {}
+}

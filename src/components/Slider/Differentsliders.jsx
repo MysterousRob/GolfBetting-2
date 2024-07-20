@@ -1,6 +1,5 @@
 import React from 'react';
-import './../../assets/css/GBS.css';
-
+import "./../../assets/css/GBS.css";
 
 
 export function Slider1({parentTitle, childTitle, setSliderValues, max=10, value, parent}) {
