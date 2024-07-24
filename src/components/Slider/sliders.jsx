@@ -84,12 +84,12 @@ function MultiVariableSlider() {
     setSliderValues(newValue);
   };
 
-  console.log("Dropdown open state:", dropdownOpen);
+  // console.log("Dropdown open state:", dropdownOpen);
 
-
-  useEffect(() => {
-    console.log('sliderValues in sliders.js:', sliderValues)
-  }, [sliderValues])
+        //this is some testing code to see if the sliders are working
+  // useEffect(() => {
+  //   console.log('sliderValues in sliders.js:', sliderValues)
+  // }, [sliderValues])
 
 
   return (
