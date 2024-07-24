@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from "react";
 import "./../../state/footerData";
 import { Slider1 } from "./Differentsliders";
-import { FaArrowCircleDown } from "react-icons/fa";
-import { FaArrowCircleUp } from "react-icons/fa";
+import { FaArrowCircleDown, FaArrowCircleUp } from "react-icons/fa";
 //import { sliderData } from "./sliderdata";
 
 function MultiVariableSlider() {
   const [dropdownOpen, setDropdownOpen] = useState([false, false]);
-
   const [sliderValues, setSliderValues] = useState([
     //event form 
     {title: 'Event Form', value: '0', 
@@ -28,7 +26,7 @@ function MultiVariableSlider() {
       {title: 'Last but 3 Tournament', value: '3'},
       {title: 'Last but 5 Tournament', value: '4'},
 ]},
-//soring stats
+//scoring stats
     {title: 'Scoring Stats', value: '2',
       children:[
       {title: 'Hole in One Average', value: '0'},
@@ -65,7 +63,7 @@ function MultiVariableSlider() {
     {title: 'Driving Distance', value: '0'},
     {title: 'Proximity to Hole', value: '1'},
     {title: 'Going for Green', value: '2'},
-    {title: 'Driving Acuracy', value: '3'},
+    {title: 'Driving Accuracy', value: '3'},
     {title: 'GIR', value: '4'},
     {title: 'Scrambling', value: '5'},
     {title: 'Sand Saves', value: '6'},
@@ -76,10 +74,8 @@ function MultiVariableSlider() {
 
   const toggleDropdown = (index) => {
     setDropdownOpen((prevState) => {
-      console.log("Previous state:", prevState);
       const newState = [...prevState];
       newState[index] = !newState[index];
-      console.log("New state:", newState);
       return newState;
     });
   };
@@ -102,17 +98,13 @@ function MultiVariableSlider() {
         {/* event form */}
         <div tabIndex={0} className="relative text-black mb-5">
           <div role="button" className="flex justify-center relative">
-            <p className="text-black">
-              Event Form
-            </p>
-            
+            <p className="text-black">Event Form</p>
             <Slider1 
-            parentTitle="Event Form" 
-            max={10} 
-            parent={true}
-            setSliderValues={setSliderValues}
-            value={sliderValues[0].value} />
-            
+              parentTitle="Event Form" 
+              max={10} 
+              parent={true}
+              setSliderValues={setSliderValues}
+              value={sliderValues[0].value} />
             {dropdownOpen[0] ? (
               <FaArrowCircleUp onClick={() => toggleDropdown(0)} />
             ) : (
@@ -120,81 +112,32 @@ function MultiVariableSlider() {
             )}
           </div>
           <ul className={`dropdown-content ${dropdownOpen[0] ? "show" : ""}`}>
-            <li className="list-none p-0 m-0 block">
-              <p className="text-black" title="Event Average">
-                Event Average
-              </p>
+            {sliderValues[0].children.map((child, idx) => (
+              <li className="list-none p-0 m-0 block" key={idx}>
+                <p className="text-black">{child.title}</p>
                 <Slider1
                   parent={false}
                   max={10}
                   className="w-[100px]"
-                  value={sliderValues[0].children[0].value}
-                  setSliderValues={setSliderValues}
-                  childTitle="Event Average"
-                  parentTitle="Event Form"
-                />
-              
-            </li>
-            <li className="list-none p-0 m-0 block" >
-              <p className="text-black" >
-                Event top 10
-              </p>
-                <Slider1
-                  parentTitle="Event Form"
-                  childTitle="Event-10"
-                  parent={false}
-                  max={10}
-                  className="w-[100px]"
-                  value={sliderValues[0].children[1].value}
-                  setSliderValues={setSliderValues}
-                />
-              
-            </li>
-            <li className="list-none p-0 m-0 block">
-              <p className="text-black" >
-                Event Wins
-              </p>
-                <Slider1
-                  parent={false}
-                  max={10}
-                  className="w-[100px]"
-                  value={sliderValues[0].children[2].value}
+                  value={child.value}
                   setSliderValues={setSliderValues}
                   parentTitle="Event Form"
-                  childTitle="Event Wins"
+                  childTitle={child.title}
                 />
-              
-            </li>
-            <li className="list-none p-0 m-0 block">
-              <p className="text-black" title="Last Season">
-                Last Year Tournament
-              </p>
-                <Slider1
-                  parent={false}
-                  max={10}
-                  className="w-[100px]"
-                  value={sliderValues[0].children[3].value}
-                  setSliderValues={setSliderValues}
-                  parentTitle="Event Form"
-                  childTitle="Last Year Tournament"
-                />
-              
-            </li>
+              </li>
+            ))}
           </ul>
         </div>
        {/* current form */}
        <div tabIndex={1} className="relative text-black mb-5">
           <div role="button" className="flex justify-center relative">
-            <p className="text-black">
-              Current Form
-            </p>
+            <p className="text-black">Current Form</p>
             <Slider1 
-            parentTitle="Current Form" 
-            max={10} 
-            parent={true}
-            setSliderValues={setSliderValues}
-            value={sliderValues[1].value} />
-            
+              parentTitle="Current Form"
+              max={10} 
+              parent={true}
+              setSliderValues={setSliderValues}
+              value={sliderValues[1].value} />
             {dropdownOpen[1] ? (
               <FaArrowCircleUp onClick={() => toggleDropdown(1)} />
             ) : (
@@ -202,97 +145,32 @@ function MultiVariableSlider() {
             )}
           </div>
           <ul className={`dropdown-content ${dropdownOpen[1] ? "show" : ""}`}>
-            <li className="list-none p-0 m-0 block">
-              <p className="text-black" title="Event Average">
-                OWGR
-              </p>
+            {sliderValues[1].children.map((child, idx) => (
+              <li className="list-none p-0 m-0 block" key={idx}>
+                <p className="text-black">{child.title}</p>
                 <Slider1
                   parent={false}
                   max={10}
                   className="w-[100px]"
-                  value={sliderValues[1].children[0].value}
+                  value={child.value}
                   setSliderValues={setSliderValues}
-                  childTitle="OWGR"
                   parentTitle="Current Form"
+                  childTitle={child.title}
                 />
-              
-            </li>
-            <li className="list-none p-0 m-0 block">
-              <p className="text-black" title="Event Average">
-                Last Tournament
-              </p>
-                <Slider1
-                  parent={false}
-                  max={10}
-                  className="w-[100px]"
-                  value={sliderValues[1].children[1].value}
-                  setSliderValues={setSliderValues}
-                  childTitle="Last Tournament"
-                  parentTitle="Current Form"
-                />
-              
-            </li>
-            <li className="list-none p-0 m-0 block">
-              <p className="text-black" title="Event Average">
-              Last but 1 Tournament
-              </p>
-                <Slider1
-                  parent={false}
-                  max={10}
-                  className="w-[100px]"
-                  value={sliderValues[1].children[2].value}
-                  setSliderValues={setSliderValues}
-                  childTitle="Last but 1 Tournament"
-                  parentTitle="Current Form"
-                />
-              
-            </li>
-            <li className="list-none p-0 m-0 block">
-              <p className="text-black" title="Event Average">
-              Last but 3 Tournament
-              </p>
-                <Slider1
-                  parent={false}
-                  max={10}
-                  className="w-[100px]"
-                  value={sliderValues[1].children[3].value}
-                  setSliderValues={setSliderValues}
-                  childTitle="Last but 3 Tournament"
-                  parentTitle="Current Form"
-                />
-              
-            </li>
-            <li className="list-none p-0 m-0 block">
-              <p className="text-black" title="Event Average">
-              Last but 5 Tournament
-              </p>
-                <Slider1
-                  parent={false}
-                  max={10}
-                  className="w-[100px]"
-                  value={sliderValues[1].children[4].value}
-                  setSliderValues={setSliderValues}
-                  childTitle="Last but 5 Tournament"
-                  parentTitle="Current Form"
-                />
-              
-            </li>
-           
+              </li>
+            ))}
           </ul>
         </div>
        {/* Scoring stats */}
        <div tabIndex={2} className="relative text-black mb-5">
           <div role="button" className="flex justify-center relative">
-            <p className="text-black">
-              Scoring Stats
-            </p>
+            <p className="text-black">Scoring Stats</p>
             <Slider1 
-            parentTitle="Scoring Stats" 
-            max={10} 
-            parent={true}
-            setSliderValues={setSliderValues}
-            value={sliderValues[2].value} />
-            
+              parentTitle="Scoring Stats"
+              max={10} 
+              parent={true}
+              setSliderValues={setSliderValues}
+              value={sliderValues[2].value} />
             {dropdownOpen[2] ? (
               <FaArrowCircleUp onClick={() => toggleDropdown(2)} />
             ) : (
@@ -300,128 +178,32 @@ function MultiVariableSlider() {
             )}
           </div>
           <ul className={`dropdown-content ${dropdownOpen[2] ? "show" : ""}`}>
-            <li className="list-none p-0 m-0 block">
-              <p className="text-black" title="Event Average">
-              Hole in One Average
-              </p>
+            {sliderValues[2].children.map((child, idx) => (
+              <li className="list-none p-0 m-0 block" key={idx}>
+                <p className="text-black">{child.title}</p>
                 <Slider1
                   parent={false}
                   max={10}
                   className="w-[100px]"
-                  value={sliderValues[2].children[0].value}
+                  value={child.value}
                   setSliderValues={setSliderValues}
-                  childTitle="Hole in One Average"
-                  parentTitle="Scoring Stats"
+                  parentTitle="scoring stats"
+                  childTitle={child.title}
                 />
-              
-            </li>
-            <li className="list-none p-0 m-0 block">
-              <p className="text-black" title="Event Average">
-              Birdie Average
-              </p>
-                <Slider1
-                  parent={false}
-                  max={10}
-                  className="w-[100px]"
-                  value={sliderValues[2].children[1].value}
-                  setSliderValues={setSliderValues}
-                  childTitle="Birdie Average"
-                  parentTitle="Scoring Stats"
-                />
-              
-            </li>
-            <li className="list-none p-0 m-0 block">
-              <p className="text-black" title="Event Average">
-              Eagle Average
-              </p>
-                <Slider1
-                  parent={false}
-                  max={10}
-                  className="w-[100px]"
-                  value={sliderValues[2].children[2].value}
-                  setSliderValues={setSliderValues}
-                  childTitle="Eagle Average"
-                  parentTitle="Scoring Stats"
-                />
-              
-            </li>
-            <li className="list-none p-0 m-0 block">
-              <p className="text-black" title="Event Average">
-              Bogey Average
-              </p>
-                <Slider1
-                  parent={false}
-                  max={10}
-                  className="w-[100px]"
-                  value={sliderValues[2].children[3].value}
-                  setSliderValues={setSliderValues}
-                  childTitle="Bogey Average"
-                  parentTitle="Scoring Stats"
-                />
-              
-            </li>
-            <li className="list-none p-0 m-0 block">
-              <p className="text-black" title="Event Average">
-              Par 3 Performance
-              </p>
-                <Slider1
-                  parent={false}
-                  max={10}
-                  className="w-[100px]"
-                  value={sliderValues[2].children[4].value}
-                  setSliderValues={setSliderValues}
-                  childTitle="Par 3 Performance"
-                  parentTitle="Scoring Stats"
-                />
-              
-            </li>
-            <li className="list-none p-0 m-0 block">
-              <p className="text-black" title="Event Average">
-              Par 4 Performance
-              </p>
-                <Slider1
-                  parent={false}
-                  max={10}
-                  className="w-[100px]"
-                  value={sliderValues[2].children[5].value}
-                  setSliderValues={setSliderValues}
-                  childTitle="Par 4 Performance"
-                  parentTitle="Scoring Stats"
-                />
-              
-            </li>
-            <li className="list-none p-0 m-0 block">
-              <p className="text-black" title="Event Average">
-              Par 5 Performance
-              </p>
-                <Slider1
-                  parent={false}
-                  max={10}
-                  className="w-[100px]"
-                  value={sliderValues[2].children[6].value}
-                  setSliderValues={setSliderValues}
-                  childTitle="Par 5 Performance"
-                  parentTitle="Scoring Stats"
-                />
-              
-            </li>
-           
+              </li>
+            ))}
           </ul>
         </div>
        {/* event specific */}
        <div tabIndex={3} className="relative text-black mb-5">
           <div role="button" className="flex justify-center relative">
-            <p className="text-black">
-            Event Specific
-            </p>
-            
+            <p className="text-black">Event Specific</p>
             <Slider1 
-            parentTitle="Event Specific" 
-            max={10} 
-            parent={true}
-            setSliderValues={setSliderValues}
-            value={sliderValues[3].value} />
-            
+              parentTitle="Event Specific"
+              max={10} 
+              parent={true}
+              setSliderValues={setSliderValues}
+              value={sliderValues[3].value} />
             {dropdownOpen[3] ? (
               <FaArrowCircleUp onClick={() => toggleDropdown(3)} />
             ) : (
@@ -429,107 +211,32 @@ function MultiVariableSlider() {
             )}
           </div>
           <ul className={`dropdown-content ${dropdownOpen[3] ? "show" : ""}`}>
-            <li className="list-none p-0 m-0 block">
-              <p className="text-black" >
-              Par 70
-              </p>
+            {sliderValues[3].children.map((child, idx) => (
+              <li className="list-none p-0 m-0 block" key={idx}>
+                <p className="text-black">{child.title}</p>
                 <Slider1
                   parent={false}
                   max={10}
                   className="w-[100px]"
-                  value={sliderValues[3].children[0].value}
+                  value={child.value}
                   setSliderValues={setSliderValues}
-                  childTitle="Par 70"
                   parentTitle="Event Specific"
+                  childTitle={child.title}
                 />
-            </li>
-            <li className="list-none p-0 m-0 block">
-              <p className="text-black" >
-              Short Course
-              </p>
-                <Slider1
-                  parent={false}
-                  max={10}
-                  className="w-[100px]"
-                  value={sliderValues[3].children[1].value}
-                  setSliderValues={setSliderValues}
-                  childTitle="Short Course"
-                  parentTitle="Event Specific"
-                />
-            </li>
-            <li className="list-none p-0 m-0 block">
-              <p className="text-black" >
-              Bermuda Postive
-              </p>
-                <Slider1
-                  parent={false}
-                  max={10}
-                  className="w-[100px]"
-                  value={sliderValues[3].children[2].value}
-                  setSliderValues={setSliderValues}
-                  childTitle="Bermuda Postive"
-                  parentTitle="Event Specific"
-                />
-            </li>
-            <li className="list-none p-0 m-0 block">
-              <p className="text-black" >
-              Soft Ground
-              </p>
-                <Slider1
-                  parent={false}
-                  max={10}
-                  className="w-[100px]"
-                  value={sliderValues[3].children[3].value}
-                  setSliderValues={setSliderValues}
-                  childTitle="Soft Ground"
-                  parentTitle="Event Specific"
-                />
-            </li>
-            <li className="list-none p-0 m-0 block">
-              <p className="text-black" >
-              Fazio Design
-              </p>
-                <Slider1
-                  parent={false}
-                  max={10}
-                  className="w-[100px]"
-                  value={sliderValues[3].children[4].value}
-                  setSliderValues={setSliderValues}
-                  childTitle="Fazio Design"
-                  parentTitle="Event Specific"
-                />
-            </li>
-            <li className="list-none p-0 m-0 block">
-              <p className="text-black" >
-              Costal Course
-              </p>
-                <Slider1
-                  parent={false}
-                  max={10}
-                  className="w-[100px]"
-                  value={sliderValues[3].children[5].value}
-                  setSliderValues={setSliderValues}
-                  childTitle="Costal Course"
-                  parentTitle="Event Specific"
-                />
-            </li>
-           
+              </li>
+            ))}
           </ul>
         </div>
        {/* Strokes Gained*/}
        <div tabIndex={4} className="relative text-black mb-5">
           <div role="button" className="flex justify-center relative">
-            <p className="text-black">
-            Strokes Gained
-            </p>
-            
+            <p className="text-black">Strokes Gained</p>
             <Slider1 
-            parentTitle="Strokes Gained" 
-            max={10} 
-            parent={true}
-            setSliderValues={setSliderValues}
-            value={sliderValues[4].value} />
-            
+              parentTitle="Strokes Gained"
+              max={10} 
+              parent={true}
+              setSliderValues={setSliderValues}
+              value={sliderValues[4].value} />
             {dropdownOpen[4] ? (
               <FaArrowCircleUp onClick={() => toggleDropdown(4)} />
             ) : (
@@ -537,92 +244,32 @@ function MultiVariableSlider() {
             )}
           </div>
           <ul className={`dropdown-content ${dropdownOpen[4] ? "show" : ""}`}>
-            <li className="list-none p-0 m-0 block">
-              <p className="text-black">
-              SG off the Tee
-              </p>
+            {sliderValues[4].children.map((child, idx) => (
+              <li className="list-none p-0 m-0 block" key={idx}>
+                <p className="text-black">{child.title}</p>
                 <Slider1
                   parent={false}
                   max={10}
                   className="w-[100px]"
-                  value={sliderValues[4].children[0].value}
+                  value={child.value}
                   setSliderValues={setSliderValues}
-                  childTitle="SG off the Tee"
                   parentTitle="Strokes Gained"
+                  childTitle={child.title}
                 />
-            </li>
-            <li className="list-none p-0 m-0 block">
-              <p className="text-black">
-              SG Approach
-              </p>
-                <Slider1
-                  parent={false}
-                  max={10}
-                  className="w-[100px]"
-                  value={sliderValues[4].children[1].value}
-                  setSliderValues={setSliderValues}
-                  childTitle="SG Approach"
-                  parentTitle="Strokes Gained"
-                />
-            </li>
-            <li className="list-none p-0 m-0 block">
-              <p className="text-black">
-              SG Tee to Green
-              </p>
-                <Slider1
-                  parent={false}
-                  max={10}
-                  className="w-[100px]"
-                  value={sliderValues[4].children[2].value}
-                  setSliderValues={setSliderValues}
-                  childTitle="SG Tee to Green"
-                  parentTitle="Strokes Gained"
-                />
-            </li>
-            <li className="list-none p-0 m-0 block">
-              <p className="text-black">
-              SG arround the Green
-              </p>
-                <Slider1
-                  parent={false}
-                  max={10}
-                  className="w-[100px]"
-                  value={sliderValues[4].children[3].value}
-                  setSliderValues={setSliderValues}
-                  childTitle="SG arround the Green"
-                  parentTitle="Strokes Gained"
-                />
-            </li>
-            <li className="list-none p-0 m-0 block">
-              <p className="text-black">
-              SG Putting
-              </p>
-                <Slider1
-                  parent={false}
-                  max={10}
-                  className="w-[100px]"
-                  value={sliderValues[4].children[4].value}
-                  setSliderValues={setSliderValues}
-                  childTitle="SG Putting"
-                  parentTitle="Strokes Gained"
-                />
-            </li>
-           
+              </li>
+            ))}
           </ul>
         </div>
        {/* skill stats */}
        <div tabIndex={5} className="relative text-black mb-5">
           <div role="button" className="flex justify-center relative">
-            <p className="text-black">
-            Skill Stats
-            </p>
+            <p className="text-black">Skill Stats</p>
             <Slider1 
-            parentTitle="Skill Stats" 
-            max={300} 
-            parent={true}
-            setSliderValues={setSliderValues}
-            value={sliderValues[5].value} />
-            
+              parentTitle="Skill Stats"
+              max={300} 
+              parent={true}
+              setSliderValues={setSliderValues}
+              value={sliderValues[5].value} />
             {dropdownOpen[5] ? (
               <FaArrowCircleUp onClick={() => toggleDropdown(5)} />
             ) : (
@@ -630,133 +277,20 @@ function MultiVariableSlider() {
             )}
           </div>
           <ul className={`dropdown-content ${dropdownOpen[5] ? "show" : ""}`}>
-            <li className="list-none p-0 m-0 block">
-              <p className="text-black">
-              Driving Distance
-              </p>
+            {sliderValues[5].children.map((child, idx) => (
+              <li className="list-none p-0 m-0 block" key={idx}>
+                <p className="text-black">{child.title}</p>
                 <Slider1
                   parent={false}
                   max={300}
                   className="w-[100px]"
-                  value={sliderValues[5].children[0].value}
+                  value={child.value}
                   setSliderValues={setSliderValues}
-                  childTitle="Driving Distance"
                   parentTitle="Skill Stats"
+                  childTitle={child.title}
                 />
-            </li>
-            <li className="list-none p-0 m-0 block">
-              <p className="text-black">
-              Proximity to Hole
-              </p>
-                <Slider1
-                  parent={false}
-                  max={300}
-                  className="w-[100px]"
-                  value={sliderValues[5].children[1].value}
-                  setSliderValues={setSliderValues}
-                  childTitle="Proximity to Hole"
-                  parentTitle="Skill Stats"
-                />
-            </li>
-            <li className="list-none p-0 m-0 block">
-              <p className="text-black">
-              Going for Green
-              </p>
-                <Slider1
-                  parent={false}
-                  max={300}
-                  className="w-[100px]"
-                  value={sliderValues[5].children[2].value}
-                  setSliderValues={setSliderValues}
-                  childTitle="Going for Green"
-                  parentTitle="Skill Stats"
-                />
-            </li>
-            <li className="list-none p-0 m-0 block">
-              <p className="text-black">
-              Driving Acuracy
-              </p>
-                <Slider1
-                  parent={false}
-                  max={300}
-                  className="w-[100px]"
-                  value={sliderValues[5].children[3].value}
-                  setSliderValues={setSliderValues}
-                  childTitle="Driving Acuracy"
-                  parentTitle="Skill Stats"
-                />
-            </li>
-            <li className="list-none p-0 m-0 block">
-              <p className="text-black">
-              GIR
-              </p>
-                <Slider1
-                  parent={false}
-                  max={300}
-                  className="w-[100px]"
-                  value={sliderValues[5].children[4].value}
-                  setSliderValues={setSliderValues}
-                  childTitle="GIR"
-                  parentTitle="Skill Stats"
-                />
-            </li>
-            <li className="list-none p-0 m-0 block">
-              <p className="text-black">
-              Scrambling
-              </p>
-                <Slider1
-                  parent={false}
-                  max={300}
-                  className="w-[100px]"
-                  value={sliderValues[5].children[5].value}
-                  setSliderValues={setSliderValues}
-                  childTitle="Scrambling"
-                  parentTitle="Skill Stats"
-                />
-            </li>
-            <li className="list-none p-0 m-0 block">
-              <p className="text-black">
-              Sand Saves
-              </p>
-                <Slider1
-                  parent={false}
-                  max={300}
-                  className="w-[100px]"
-                  value={sliderValues[5].children[6].value}
-                  setSliderValues={setSliderValues}
-                  childTitle="Sand Saves"
-                  parentTitle="Skill Stats"
-                />
-            </li>
-            <li className="list-none p-0 m-0 block">
-              <p className="text-black">
-              Putting Average
-              </p>
-                <Slider1
-                  parent={false}
-                  max={300}
-                  className="w-[100px]"
-                  value={sliderValues[5].children[7].value}
-                  setSliderValues={setSliderValues}
-                  childTitle="Putting Average"
-                  parentTitle="Skill Stats"
-                />
-            </li>
-            <li className="list-none p-0 m-0 block">
-              <p className="text-black">
-              Puts per Round
-              </p>
-                <Slider1
-                  parent={false}
-                  max={300}
-                  className="w-[100px]"
-                  value={sliderValues[5].children[8].value}
-                  setSliderValues={setSliderValues}
-                  childTitle="Puts per Round"
-                  parentTitle="Skill Stats"
-                />
-            </li>
-           
+              </li>
+            ))}
           </ul>
         </div>
       </div>
