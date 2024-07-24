@@ -5,7 +5,7 @@ import { FaArrowCircleDown, FaArrowCircleUp } from "react-icons/fa";
 //import { sliderData } from "./sliderdata";
 
 function MultiVariableSlider() {
-  const [dropdownOpen, setDropdownOpen] = useState([false, false, false, false, false, false]);
+  const [dropdownOpen, setDropdownOpen] = useState([false, false]);
   const [sliderValues, setSliderValues] = useState([
     //event form 
     {title: 'Event Form', value: '0', 
@@ -94,9 +94,9 @@ function MultiVariableSlider() {
 
   return (
     <div>
-      <div className="flex flex-col p-5 ml-[15%]">
+      <div className="bg-black flex flex-col ml-[15%]">
         {/* event form */}
-        <div tabIndex={0} className="relative rounded-lg bg-white text-black mb-5 px-3 py-[7px]">
+        <div tabIndex={0} className="bg-white relative text-black mb-5 pb-5">
           <div role="button" className="flex justify-center relative">
             <p className="text-black">Event Form</p>
             <Slider1 
@@ -111,7 +111,7 @@ function MultiVariableSlider() {
               <FaArrowCircleDown onClick={() => toggleDropdown(0)} />
             )}
           </div>
-          <ul className={`dropdown-content ${dropdownOpen[0] ? "show" : "hidden"}`}>
+          <ul className={`dropdown-content ${dropdownOpen[0] ? "show" : ""}`}>
             {sliderValues[0].children.map((child, idx) => (
               <li className="list-none p-0 m-0 block" key={idx}>
                 <p className="text-black">{child.title}</p>
@@ -129,7 +129,7 @@ function MultiVariableSlider() {
           </ul>
         </div>
        {/* current form */}
-       <div tabIndex={1} className="relative rounded-lg bg-white text-black mb-5 px-3 py-[7px]">
+       <div tabIndex={1} className="relative bg-white text-black mb-5">
           <div role="button" className="flex justify-center relative">
             <p className="text-black">Current Form</p>
             <Slider1 
@@ -144,7 +144,7 @@ function MultiVariableSlider() {
               <FaArrowCircleDown onClick={() => toggleDropdown(1)} />
             )}
           </div>
-          <ul className={`dropdown-content ${dropdownOpen[1] ? "show" : "hidden"}`}>
+          <ul className={`dropdown-content ${dropdownOpen[1] ? "show" : ""}`}>
             {sliderValues[1].children.map((child, idx) => (
               <li className="list-none p-0 m-0 block" key={idx}>
                 <p className="text-black">{child.title}</p>
@@ -162,7 +162,7 @@ function MultiVariableSlider() {
           </ul>
         </div>
        {/* Scoring stats */}
-       <div tabIndex={2} className="relative rounded-lg bg-white text-black mb-5 px-3 py-[7px]">
+       <div tabIndex={2} className="relative bg-white text-black mb-5 pb-5">
           <div role="button" className="flex justify-center relative">
             <p className="text-black">Scoring Stats</p>
             <Slider1 
@@ -177,7 +177,7 @@ function MultiVariableSlider() {
               <FaArrowCircleDown onClick={() => toggleDropdown(2)} />
             )}
           </div>
-          <ul className={`dropdown-content ${dropdownOpen[2] ? "show" : "hidden"}`}>
+          <ul className={`dropdown-content ${dropdownOpen[2] ? "show" : ""}`}>
             {sliderValues[2].children.map((child, idx) => (
               <li className="list-none p-0 m-0 block" key={idx}>
                 <p className="text-black">{child.title}</p>
@@ -195,7 +195,7 @@ function MultiVariableSlider() {
           </ul>
         </div>
        {/* event specific */}
-       <div tabIndex={3} className="relative rounded-lg bg-white text-black mb-5 px-3 py-[7px]">
+       <div tabIndex={3} className="relative bg-white text-black mb-5">
           <div role="button" className="flex justify-center relative">
             <p className="text-black">Event Specific</p>
             <Slider1 
@@ -210,7 +210,7 @@ function MultiVariableSlider() {
               <FaArrowCircleDown onClick={() => toggleDropdown(3)} />
             )}
           </div>
-          <ul className={`dropdown-content ${dropdownOpen[3] ? "show" : "hidden"}`}>
+          <ul className={`dropdown-content ${dropdownOpen[3] ? "show" : ""}`}>
             {sliderValues[3].children.map((child, idx) => (
               <li className="list-none p-0 m-0 block" key={idx}>
                 <p className="text-black">{child.title}</p>
@@ -228,7 +228,7 @@ function MultiVariableSlider() {
           </ul>
         </div>
        {/* Strokes Gained*/}
-       <div tabIndex={4} className="relative rounded-lg bg-white text-black mb-5 px-3 py-[7px]">
+       <div tabIndex={4} className="relative bg-white text-black mb-5">
           <div role="button" className="flex justify-center relative">
             <p className="text-black">Strokes Gained</p>
             <Slider1 
@@ -243,7 +243,7 @@ function MultiVariableSlider() {
               <FaArrowCircleDown onClick={() => toggleDropdown(4)} />
             )}
           </div>
-          <ul className={`dropdown-content ${dropdownOpen[4] ? "show" : "hidden"}`}>
+          <ul className={`dropdown-content ${dropdownOpen[4] ? "show" : ""}`}>
             {sliderValues[4].children.map((child, idx) => (
               <li className="list-none p-0 m-0 block" key={idx}>
                 <p className="text-black">{child.title}</p>
@@ -261,7 +261,7 @@ function MultiVariableSlider() {
           </ul>
         </div>
        {/* skill stats */}
-       <div tabIndex={5} className="relative rounded-lg bg-white text-black mb-5 px-3 py-[7px]">
+       <div tabIndex={5} className="relative bg-white text-black mb-5">
           <div role="button" className="flex justify-center relative">
             <p className="text-black">Skill Stats</p>
             <Slider1 
@@ -276,7 +276,7 @@ function MultiVariableSlider() {
               <FaArrowCircleDown onClick={() => toggleDropdown(5)} />
             )}
           </div>
-          <ul className={`dropdown-content ${dropdownOpen[5] ? "show" : "hidden"}`}>
+          <ul className={`dropdown-content ${dropdownOpen[5] ? "show" : ""}`}>
             {sliderValues[5].children.map((child, idx) => (
               <li className="list-none p-0 m-0 block" key={idx}>
                 <p className="text-black">{child.title}</p>

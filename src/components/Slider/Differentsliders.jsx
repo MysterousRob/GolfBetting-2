@@ -1,5 +1,6 @@
-import React from "react";
+import React from 'react';
 import "./../../assets/css/GBS.css";
+
 
 export function Slider1({
   parentTitle,
@@ -10,41 +11,51 @@ export function Slider1({
   parent,
 }) {
   return (
-    <>
-      <div className="slider-input1">
-        <input
-          onChange={(event) => {
-            setSliderValues((prev) => {
-              if (parent) {
-                return prev.map((slider) => {
-                  if (slider.title === parentTitle) {
-                    slider.value = event.target.value;
-                    slider.children.map((child) => {
-                      child.value = event.target.value;
-                    });
-                  }
-                  return slider;
-                });
-              }
+    <div className="slider-input1">
+      <input
+        type="range"
+        min={0}
+        max={max}
+        value={value}
+        onChange={(event) => {
+          const newValue = event.target.value;
+          setSliderValues((prev) => {
+            if (parent) {
               return prev.map((slider) => {
                 if (slider.title === parentTitle) {
-                  slider.children?.map((childSlider) => {
-                    if (childSlider.title === childTitle) {
-                      childSlider.value = event.target.value;
-                    }
-                  });
+                  return {
+                    ...slider,
+                    value: newValue,
+                    children: slider.children.map((child) => ({
+                      ...child,
+                      value: newValue,
+                    })),
+                  };
                 }
                 return slider;
               });
+            }
+            return prev.map((slider) => {
+              if (slider.title === parentTitle) {
+                return {
+                  ...slider,
+                  children: slider.children.map((childSlider) => {
+                    if (childSlider.title === childTitle) {
+                      return {
+                        ...childSlider,
+                        value: newValue,
+                      };
+                    }
+                    return childSlider;
+                  }),
+                };
+              }
+              return slider;
             });
-          }}
-          type="range"
-          min={0}
-          max={max}
-          value={value}
-          className="range range-primary"
-        />
-      </div>
-    </>
+          });
+        }}
+        className="range range-primary"
+      />
+    </div>
   );
 }
