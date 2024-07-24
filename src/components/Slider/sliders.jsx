@@ -94,9 +94,9 @@ function MultiVariableSlider() {
 
   return (
     <div>
-      <div className="bg-white flex flex-col ml-[15%]">
+      <div className="bg-black flex flex-col ml-[15%]">
         {/* event form */}
-        <div tabIndex={0} className="relative text-black mb-5">
+        <div tabIndex={0} className="bg-white relative text-black mb-5 pb-5">
           <div role="button" className="flex justify-center relative">
             <p className="text-black">Event Form</p>
             <Slider1 
@@ -129,7 +129,7 @@ function MultiVariableSlider() {
           </ul>
         </div>
        {/* current form */}
-       <div tabIndex={1} className="relative text-black mb-5">
+       <div tabIndex={1} className="relative bg-white text-black mb-5">
           <div role="button" className="flex justify-center relative">
             <p className="text-black">Current Form</p>
             <Slider1 
@@ -162,7 +162,7 @@ function MultiVariableSlider() {
           </ul>
         </div>
        {/* Scoring stats */}
-       <div tabIndex={2} className="relative text-black mb-5">
+       <div tabIndex={2} className="relative bg-white text-black mb-5 pb-5">
           <div role="button" className="flex justify-center relative">
             <p className="text-black">Scoring Stats</p>
             <Slider1 
@@ -195,7 +195,7 @@ function MultiVariableSlider() {
           </ul>
         </div>
        {/* event specific */}
-       <div tabIndex={3} className="relative text-black mb-5">
+       <div tabIndex={3} className="relative bg-white text-black mb-5">
           <div role="button" className="flex justify-center relative">
             <p className="text-black">Event Specific</p>
             <Slider1 
@@ -228,7 +228,7 @@ function MultiVariableSlider() {
           </ul>
         </div>
        {/* Strokes Gained*/}
-       <div tabIndex={4} className="relative text-black mb-5">
+       <div tabIndex={4} className="relative bg-white text-black mb-5">
           <div role="button" className="flex justify-center relative">
             <p className="text-black">Strokes Gained</p>
             <Slider1 
@@ -261,7 +261,7 @@ function MultiVariableSlider() {
           </ul>
         </div>
        {/* skill stats */}
-       <div tabIndex={5} className="relative text-black mb-5">
+       <div tabIndex={5} className="relative bg-white text-black mb-5">
           <div role="button" className="flex justify-center relative">
             <p className="text-black">Skill Stats</p>
             <Slider1 
