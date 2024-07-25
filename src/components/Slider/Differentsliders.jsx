@@ -23,12 +23,6 @@ export function Slider1({parentTitle, childTitle, setSliderValues, max=10, value
                 }
                 return slider
               })}
-
-
-
-
-
-
             return prev.map(slider => {
               if(slider.title === parentTitle){
                 slider.children?.map(childSlider => {
@@ -38,11 +32,7 @@ export function Slider1({parentTitle, childTitle, setSliderValues, max=10, value
                 })
               }
               return slider
-            }
-          
-          
-          
-          
+            }                                        
           )
           })
         }
