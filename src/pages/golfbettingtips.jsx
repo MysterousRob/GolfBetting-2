@@ -59,7 +59,7 @@ function Tips() {
   ];
 
   return (
-    <div>
+    <>
   <Header />
   <div className="mt-1.5 p-10 bg-black text-2xl text-white">
     <h1 className="text-indent-[15px]">Some things to consider when betting.</h1>
@@ -90,8 +90,9 @@ function Tips() {
       ))}
     </div>
   </div>
-  <Footer />
-</div>
+    <Footer />
+ 
+  </> 
   );
 }
 

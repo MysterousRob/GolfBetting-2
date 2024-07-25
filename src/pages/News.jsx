@@ -9,7 +9,9 @@ function News() {
       <div>
         <h1>News Page</h1>
       </div>
-      <Footer />
+      <div className="absolute bottom-0">
+        <Footer />
+      </div>
     </div>
   );
 }

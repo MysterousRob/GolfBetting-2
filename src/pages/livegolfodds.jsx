@@ -21,7 +21,9 @@ function LiveOdds() {
           <LeaderboardOutline />
         </div>
       </div>
-      <Footer />
+      <div className="relative bottom-0">
+        <Footer />
+      </div>
     </div>
   );
 }

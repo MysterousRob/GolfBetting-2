@@ -11,7 +11,9 @@ function Home() {
     <div className="body">
       <Header />
       <Competiton />
-      <Footer />
+      <div className="absolute bottom-0 w-full">
+        <Footer />
+      </div>
     </div>
   );
 }

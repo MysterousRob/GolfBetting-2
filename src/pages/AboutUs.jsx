@@ -42,7 +42,7 @@ function AboutUs() {
           <img src="images\tictoc.png" />
           <img src="images\tinstalove.png" />
         </div>
-      </footer>
+      </footer>=
     </div>
   );
 }

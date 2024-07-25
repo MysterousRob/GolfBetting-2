@@ -16,13 +16,15 @@ const BoxComponent = () => {
   };
 
   return (
-    <div className="mt-1.5 p-10 bg-black text-2xl text-white">
-    <Header />
-    <div className="text-white bg-black p-1 text-2xl">
+    <div>
+    <div className="relative top-0 w-full">
+      <Header />
+    </div>
+  <div className="text-white bg-black mt-6 p-1 text-2xl">
       <h1>Different Golf Betting Websites</h1>
       <div className="m-2.5 bg-black bg-opacity-10 border-4 border-blue-500 h-[265px] flex flex-row">
         <div className="m-0 p-[125px] border-3 border-blue-500 bg-[#021434]"></div>
-        <div className="grid grid-rows-4 w-[1000px] border-2 border-blue-500">
+        <div className="grid grid-rows-4 w-[900px] border-2 border-blue-500">
           <div>
             <h1>box 1</h1>
           </div>
@@ -51,8 +53,10 @@ const BoxComponent = () => {
           </div>
         </div>
       </div>
+    </div> 
+    <div className="absolute bottom-0">
+      <Footer />
     </div>
-    <Footer />
   </div>
   );
 };

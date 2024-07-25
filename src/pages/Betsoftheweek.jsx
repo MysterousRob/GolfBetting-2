@@ -11,7 +11,9 @@ function Week() {
       <div className="mt-1.5 p-5 bg-black text-2xl text-white">
         <h1>Golf Bets of the week</h1>
       </div>
-      <Footer />
+      <div className="absolute bottom-0">
+        <Footer />
+      </div>
     </div>
   );
 }
