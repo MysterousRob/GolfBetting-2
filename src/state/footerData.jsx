@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { navOptions } from "./nav";
 
 
@@ -76,15 +76,15 @@ export const foot = [
             },
             {
                 title: "The Open Championship",
-                href: "../Open",
-            },
-            {
-                title: "US PGA Championship",
                 href: "../OpenChamp",
             },
             {
-                title: "The US Open",
+                title: "US PGA Championship",
                 href: "../PGA",
+            },
+            {
+                title: "The US Open",
+                href: "../Open",
             },
             {
                 title: "",
