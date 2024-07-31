@@ -1,8 +1,8 @@
 import React from "react";
-import PyramidItem from "./tournamentPyramidItem"; // Adjust the path as needed
+import PyramidItem from "./tournamentPyramidItem";
 
 const Pyramid = ({ items }) => {
-  // Create rows for the pyramid
+  // Created rows for the pyramid
   const pyramidRows = [
     items.slice(0, 4), // 4 items in the first row
     items.slice(4, 7), // 3 items in the second row

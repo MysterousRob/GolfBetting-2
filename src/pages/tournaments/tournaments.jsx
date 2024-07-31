@@ -1,12 +1,8 @@
 import React from "react";
-// import TheMasters2 from "./full info/themaster2";
-// import TheOpen2 from "./full info/theopen2";
-// import UsPga2 from "./full info/uspga2";
-// import OpenChamp2 from "./full info/openchamp2";
 import Pyramid from "./global/tournamentPyramid";
 
 const Competiton = () => {
-  // Create rows for the pyramid
+  // Create rows for the pyramid ( 10 for now )
   const items = [
     {
       name: "The British Open",
@@ -67,5 +63,4 @@ const Competiton = () => {
   );
 };
 
-//map all the dialogues and make individual pages which are maped with links
 export default Competiton;
