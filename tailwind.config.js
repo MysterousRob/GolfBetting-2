@@ -5,7 +5,9 @@ export default { // This changes, cause we are not using out of date commonJS
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      
+    },
   },
   plugins: [require('daisyui')],
 }
