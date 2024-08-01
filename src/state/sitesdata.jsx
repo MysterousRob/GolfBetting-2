@@ -1,6 +1,10 @@
 import React from "react";
 
-
+export const sectionData = [
+    {
+        bonus: "Bonus Code",
+    }, 
+]
 
 export const siteData = [
     {
@@ -54,12 +58,12 @@ export const siteData = [
     {
        nameSite: "William Hill", 
        info: {
-        bonusData: "no",
-        bonusCode: "no",
-        boostedOdds: "no",
-        liveStreaming: "no",
-        inPlayBetting: "no",
-        termsCondidtions: "no",
+        bonusData: "",
+        bonusCode: "",
+        boostedOdds: "",
+        liveStreaming: "",
+        inPlayBetting: "",
+        termsCondidtions: "",
        },
        link: {
         claimLink: "",
