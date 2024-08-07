@@ -6,7 +6,7 @@ import reportWebVitals from "./reportWebVitals";
 import LiveOdds from "./pages/livegolfodds";
 import Sites from "./pages/GolfBettingSites/golfbettingsites";
 import Tips from "./pages/golfbettingtips";
-import Week from "./pages/Betsoftheweek";
+import Week from "./pages/BetsOfTheWeek/MainPage/Betsoftheweek";
 import OpenChamp from "./pages/tournaments/full info/openchamp2";
 import TheMasters from "./pages/tournaments/full info/themaster2";
 import TheOpen from "./pages/tournaments/full info/theopen2";
