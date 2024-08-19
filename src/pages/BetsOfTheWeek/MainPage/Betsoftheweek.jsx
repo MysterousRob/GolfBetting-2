@@ -6,16 +6,31 @@ import Footer from "../../../components/Footer/Footer";
 
 
 const names = [
-        "The British Open",
-        "The US Open",
-        "The Masters",
-        "The PGA Championship",
-        "The Ryder Cup",
-        "The Players Championship",
-        "The Tour Championship",
-        "The Memorial Championship",
-        "The Arnold Palmer Invitational",
-        "The BMW PGA Championship"
+      "Sony Open in Hawaii",
+       "The Honda Classic",
+       "Puerto Rico Open",
+       "Farmers Insurance Open",
+       "Valero Texas Open",
+       "Arnold Palmer Invitational",
+       "Sanderson Farms Championship",
+       "Hero World Open",
+       "PGA Championship",
+       "The Wynbham Championship",
+       "The RSM Classic",
+       "The BMW Championship",
+       "The Open",
+       "The Masters",
+       "U.S. Open",
+       "Wells Fargo Championship",
+       "The Players Championship",
+       "The Masters Tournament",
+       "RBC Canadian Open",
+       "RBC Heritage",
+       "Zuric Classic of New Orleans",
+       "AT&T Byron Nelson Championship",
+       "The Travelers Championship",
+       "John Deere Classic",
+       "Barracuda Championship"  
     ]; 
 
 function Week(){
@@ -33,11 +48,17 @@ function Week(){
       <div>
         <Header />
       </div>
-      <div className="mt-1.5 p-5 bg-black text-2xl text-white">
-        <div className="flex w-[400px] flex-col justify-center items-center bg-green-500 text-white">
+      <div className="mt-1.5 p-5 bg-black text-l text-white">
+        <div className="flex w-[320px] flex-col justify-center items-center bg-green-500 text-white rounded-2xl">
+          <h className="text-center text-2xl font-bold">
+            <span className="text-white">Golf LeaderBoard</span>
+          </h>
         <div className="max-w-lg mx-auto p-4">
+          <h1 className="text-center text-xl font-bold">
+            <span className="text-white">Yearly</span>
+          </h1>
             <ul>
-                {names.map((name, index) => (
+                {names.yearly.map((name, index) => (
                     <li
                         key={index}
                         className={`p-4 border rounded-full cursor-pointer relative ${openItems[index] ? 'bg-gray-200' : ''}`}
@@ -53,6 +74,7 @@ function Week(){
         </div>
         </div>
       </div>
+     
       <div className="relative bottom-0">
         <Footer />
       </div>

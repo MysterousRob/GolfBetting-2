@@ -45,6 +45,7 @@
     "mocha": "^10.4.0",
     "postcss": "^8.4.39",
     "tailwindcss": "^3.4.4",
+    "typescript": "^5.6.0-dev.20240809",
     "vite": "^5.3.1"
   }
 }
